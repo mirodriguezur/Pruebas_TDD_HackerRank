@@ -1,6 +1,5 @@
 //
-//  day3HackerRankTest.swift
-//  day2HackerRankTests
+//  day2MealCostCalculator.swift
 //
 //  Created by Michael Alexander Rodriguez Urbina on 8/11/21.
 //
@@ -8,7 +7,7 @@
 import XCTest
 @testable import day2HackerRank
 
-class day3HackerRankTest: XCTestCase {
+class day2MealCostCalculator: XCTestCase {
 	
 	//red -> green -> refactor
     func test_tipCalculator() {
