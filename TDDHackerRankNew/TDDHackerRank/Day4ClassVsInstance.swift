@@ -7,9 +7,9 @@
 
 import Foundation
 
-public class Person {
+class Person {
     
-    public var age: Int = 0
+    private(set) var age: Int = 0
     
     public init(initialAge: Int){
         if initialAge<0{

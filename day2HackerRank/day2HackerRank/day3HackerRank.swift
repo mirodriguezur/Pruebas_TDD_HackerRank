@@ -7,15 +7,19 @@
 
 import Foundation
 
-public class ThirdDay {
-    var tip: Double = 0.0
-    var tax: Double = 0.0
-//    var totalCost: Int = 0
+public class MealCostCalulator {
     
-    func solve(meal_cost: Double, tip_percent: Int, tax_percent: Int)->Int{
-        let tip = meal_cost*(Double(tip_percent)/100)
-        let tax = meal_cost*(Double(tax_percent)/100)
-        return Int(round(meal_cost + tip + tax))
+    func solve(mealCost: Double, tipPercent: Int, taxPercent: Int) -> Int {
+        let tip = tipCalculator(mealCost, tipPercent)
+        let tax = taxCalculator(mealCost, taxPercent)
+        return Int(round(mealCost + tip + tax))
     }
     
+	func tipCalculator(_ mealCost: Double, _ tipPercent: Int) -> Double {
+		return round(mealCost*(Double(tipPercent)/100) * 10) / 10
+	}
+	
+	func taxCalculator(_ mealCost: Double, _ taxPercent: Int) -> Double {
+		return mealCost*(Double(taxPercent)/100)
+	}
 }
