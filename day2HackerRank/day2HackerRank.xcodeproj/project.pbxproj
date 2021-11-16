@@ -17,7 +17,7 @@
 		4C1AD95927345018008CCBBF /* day2HackerRankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1AD95827345018008CCBBF /* day2HackerRankUITests.swift */; };
 		4C1AD96A273450CD008CCBBF /* day2HackerRankTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1AD969273450CD008CCBBF /* day2HackerRankTest.swift */; };
 		4CD70EC42739C21F0059DBBA /* day3HackerRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD70EC32739C21F0059DBBA /* day3HackerRank.swift */; };
-		4CD70ED12739C32B0059DBBA /* day3HackerRankTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD70ED02739C32B0059DBBA /* day3HackerRankTest.swift */; };
+		4CD70ED12739C32B0059DBBA /* day2MealCostCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD70ED02739C32B0059DBBA /* day2MealCostCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		4C1AD95A27345018008CCBBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C1AD969273450CD008CCBBF /* day2HackerRankTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day2HackerRankTest.swift; sourceTree = "<group>"; };
 		4CD70EC32739C21F0059DBBA /* day3HackerRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day3HackerRank.swift; sourceTree = "<group>"; };
-		4CD70ED02739C32B0059DBBA /* day3HackerRankTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day3HackerRankTest.swift; sourceTree = "<group>"; };
+		4CD70ED02739C32B0059DBBA /* day2MealCostCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day2MealCostCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 			children = (
 				4C1AD94D27345017008CCBBF /* day2HackerRankTests.swift */,
 				4C1AD94F27345017008CCBBF /* Info.plist */,
-				4CD70ED02739C32B0059DBBA /* day3HackerRankTest.swift */,
+				4CD70ED02739C32B0059DBBA /* day2MealCostCalculator.swift */,
 			);
 			path = day2HackerRankTests;
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CD70ED12739C32B0059DBBA /* day3HackerRankTest.swift in Sources */,
+				4CD70ED12739C32B0059DBBA /* day2MealCostCalculator.swift in Sources */,
 				4C1AD94E27345017008CCBBF /* day2HackerRankTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
