@@ -23,5 +23,16 @@ class Day7ArrayTest: XCTestCase {
         XCTAssertGreaterThan(inputArray.count, sizeValidArray)
         XCTAssertEqual(result, expectation)
     }
+    
+    func test_whenUsersProvidesArrayOfIntegers_returnInverseArray(){
+        //give
+        let sut = Day7Arrays()
+        let inputArray = [2,3,1,4]
+        let expectation = [4,1,3,2]
+        //when
+        let result = sut.inverseArray(array: inputArray)
+        //then
+        XCTAssertEqual(result, expectation)
+    }
 
 }
