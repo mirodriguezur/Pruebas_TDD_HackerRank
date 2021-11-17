@@ -12,9 +12,20 @@ public class Day7Arrays{
     
     public func inverseArray(array: Array<Int>) -> Array<Int> {
         
+        var newArray = Array<Int>()
+        
         if array.count > 1000 {
             return [0]
+        } else {
+            var i = array.count - 1
+            
+            while i >= 0 {
+                newArray.append(array[i])
+                i -= 1
+            }
         }
-        return [1]
+        return newArray
     }
+    
+    
 }
