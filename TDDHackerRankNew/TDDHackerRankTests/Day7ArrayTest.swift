@@ -21,6 +21,7 @@ class Day7ArrayTest: XCTestCase {
         let result = sut.inverseArray(array: inputArray)
         //then
         XCTAssertGreaterThan(inputArray.count, sizeValidArray)
+        XCTAssertEqual(result, expectation)
     }
 
 }
