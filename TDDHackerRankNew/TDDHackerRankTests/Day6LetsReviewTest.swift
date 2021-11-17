@@ -8,46 +8,46 @@
 import XCTest
 import TDDHackerRank
 
-class Day6LetsReviewTest: XCTestCase {
+class Day6StringTest: XCTestCase {
 
-    func test_whenUserGivesString_returnCharOddIndex() {
+    func test_whenUserGivesString_returnCharacterFromEvenIndex() {
         //given
-        let string = "Hacker"
-        let sut = Day6Strings(word: string)
-        let expect = "Hce"
+        let inputString = "Hacker"
+        let sut = Day6Strings(word: inputString)
+        let expectation = "Hce"
         // when
         
-        let result = sut.oddChar()
+        let result = sut.separateCharactersFromEvenIndex()
         
         
-        XCTAssertEqual(expect, result)
+        XCTAssertEqual(expectation, result)
     }
     
-    func test_whenUserGivesString_returnCharEvenIndex() {
+    func test_whenUserGivesString_returnCharacterFromOddIndex() {
         //given
-        let string = "Hacker"
-        let sut = Day6Strings(word: string)
-        let expect = "akr"
+        let inputString = "Hacker"
+        let sut = Day6Strings(word: inputString)
+        let expectation = "akr"
         // when
         
-        let result = sut.evenChar()
+        let result = sut.separateCharactersFromOddIndex()
         
         
-        XCTAssertEqual(expect, result)
+        XCTAssertEqual(expectation, result)
     }
     //Prueba general
     
-    func test_whenUserGivesString_returnEvenStringAndOddString() {
+    func test_whenUserGivesString_returnStringWithCharactersFromEvenIndexAndStringWithCharactersFromODDIndex() {
         //given
-        let string = "Hacker"
-        let sut = Day6Strings(word: string)
-        let expect = "Hce akr"
+        let inputString = "Hacker"
+        let sut = Day6Strings(word: inputString)
+        let expectation = "Hce akr"
         // when
         
-        let result = sut.separateString()
+        let result = sut.separateStringFromEvenAndOddIndex()
         
         
-        XCTAssertEqual(expect, result)
+        XCTAssertEqual(expectation, result)
     }
 
 }

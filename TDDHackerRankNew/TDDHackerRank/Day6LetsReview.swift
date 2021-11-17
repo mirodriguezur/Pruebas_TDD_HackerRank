@@ -15,13 +15,13 @@ public class Day6Strings {
         self.word = word
     }
     
-    public func evenChar()->String{
+    public func separateCharactersFromEvenIndex()->String{
         
         let wordArray = Array(word)
         var evenWord: String = ""
         
-        for i in 0...wordArray.count - 1 where i % 2 != 0 {
-            
+        for i in 0...wordArray.count - 1 where i % 2 == 0 {
+
             evenWord = evenWord + String(wordArray[i])
 
         }
@@ -29,13 +29,13 @@ public class Day6Strings {
         return evenWord
     }
     
-    public func oddChar()->String{
+    public func separateCharactersFromOddIndex()->String{
         
         let wordArray = Array(word)
         var oddWord: String = ""
         
-        for i in 0...wordArray.count - 1 where i % 2 == 0 {
-
+        for i in 0...wordArray.count - 1 where i % 2 != 0 {
+            
             oddWord = oddWord + String(wordArray[i])
 
         }
@@ -43,7 +43,7 @@ public class Day6Strings {
         return oddWord
     }
     
-    public func separateString()->String {
-        oddChar() + " " + evenChar()
+    public func separateStringFromEvenAndOddIndex()->String {
+        separateCharactersFromEvenIndex() + " " + separateCharactersFromOddIndex()
     }
 }
