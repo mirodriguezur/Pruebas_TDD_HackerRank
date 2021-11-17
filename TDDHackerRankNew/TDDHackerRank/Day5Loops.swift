@@ -7,26 +7,10 @@
 
 import Foundation
 
-public class Day5Loop {
-    
-    public init(){}
-    
-    public func multiplicationLoop(number: Int)-> Array<String>{
-            if number >= 2 && number <= 20 {
-                var resultArray = [String]()
-                var i = 1
-                repeat {
-                    let result = number * i
-                    resultArray.append("\(number) x \(i) = \(result)")
-                    i += 1
-                } while i < 11
-                return resultArray
-            } else {
-                return ["Number is invalid"]
-            }
+func firstTenMultiples(number: Int)-> Array<String> {
+    guard number >= 2 && number <= 20 else {
+        return ["Number is invalid"]
     }
     
+    return (1...10).map { "\(number) x \($0) = \(number * $0)" }
 }
-
-
-
