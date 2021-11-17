@@ -10,43 +10,43 @@ import TDDHackerRank
 
 class Day5LoopsTest: XCTestCase {
     
-    func test_whenUserGivesNumberDifferenteTo2From20_PrintAlertInvalidRange(){
+    func test_whenUserProvidesNumberDifferenteTo2From20_printAlertNumberIsInvalid(){
         //give
         let sut = Day5Loop()
-        let num = 250
+        let inputNumber = 250
         let validRange = stride(from:1, through: 20, by: 1)
-        let expect = ["Number is invalid"]
+        let expectation = ["Number is invalid"]
         //when
-        let result = sut.multiplicationLoop(number: num)
+        let result = sut.multiplicationLoop(number: inputNumber)
         //Then
-        guard validRange.contains(num) else {
-            return XCTAssertEqual(expect, result)
+        guard validRange.contains(inputNumber) else {
+            return XCTAssertEqual(expectation, result)
         }
-        XCTFail("The number is valid")
+        XCTFail("fails, the number is valid")
     }
     
-    func test_whenUserGivesNumber_cycleRuns10Times(){
+    func test_whenUserGivesNumber_loopRuns10Times(){
         //give
         let sut = Day5Loop()
-        let num = 2
-        let expect = 10
+        let inputNumber = 2
+        let expectation = 10
         
-        let result = sut.multiplicationLoop(number: num)
+        let result = sut.multiplicationLoop(number: inputNumber)
         
-        XCTAssertTrue(result.count == expect)
+        XCTAssertTrue(result.count == expectation)
     }
     
-    func test_whenUsersGivesNumber_expectationLastReturn(){
+    func test_whenUsersGivesNumber_lastElementArrayisValid(){
         //give
         let sut = Day5Loop()
-        let num = 2
+        let inputNumber = 2
         let finalNum = 10
         let resultLoop = 20
-        let expect = "\(num) x \(finalNum) = \(resultLoop)"
+        let expectation = "\(inputNumber) x \(finalNum) = \(resultLoop)"
         //when
-        let result = sut.multiplicationLoop(number: num)
+        let result = sut.multiplicationLoop(number: inputNumber)
         //then
-        XCTAssertEqual(expect, result.last)
+        XCTAssertEqual(expectation, result.last)
     }
 
 }
