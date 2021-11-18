@@ -6,17 +6,28 @@
 //
 
 import Foundation
-
-public func separateCharactersFromEvenIndexandOddIndex(string: String) -> String {
+    
+func separateCharactersFromEvenIndex(string: String = "") -> String {
     
     let stringArray = Array(string)
-    var evenWord:String = ""
+    var evenWord: String = ""
     
-    for i in 0...stringArray.count - 1 {
-        
-        if i % 2 == 0 {
-            evenWord = evenWord + String(stringArray[i])
-        }
+    for i in 0...stringArray.count - 1 where i % 2 == 0{
+        evenWord = evenWord + String(stringArray[i])
     }
+    
     return evenWord
+}
+
+func separateCharactersFromOddIndex(string: String = "") -> String {
+    
+    let stringArray = Array(string)
+    var oddWord: String = ""
+    
+    for i in 0...stringArray.count - 1 where i % 2 != 0{
+        oddWord = oddWord + String(stringArray[i])
+    }
+    
+    return oddWord
+
 }

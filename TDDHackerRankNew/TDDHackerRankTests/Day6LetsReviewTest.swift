@@ -16,7 +16,7 @@ class Day6SeparateAStringIntoTwoStringDependingWheterTheIndexIsEvenOrOddTest: XC
         let expected = "Hce"
         // when
         
-        let result = separateCharactersFromEvenIndexandOddIndex(string: inputString)
+        let result = separateCharactersFromEvenIndex(string: inputString)
         //then
         XCTAssertEqual(expected, result)
     }
@@ -27,7 +27,7 @@ class Day6SeparateAStringIntoTwoStringDependingWheterTheIndexIsEvenOrOddTest: XC
         let expected = "akr"
         // when
         
-        let result = separateCharactersFromEvenIndexandOddIndex(string: inputString)
+        let result = separateCharactersFromOddIndex(string: inputString)
         //then
         XCTAssertEqual(expected, result)
     }
