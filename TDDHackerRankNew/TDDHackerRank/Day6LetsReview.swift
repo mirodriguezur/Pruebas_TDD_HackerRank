@@ -31,3 +31,7 @@ func separateCharactersFromOddIndex(string: String = "") -> String {
     return oddWord
 
 }
+
+func separateCharactersCharactersFromEvenIndexandOddIndex(string: String) -> String {
+    return separateCharactersFromEvenIndex(string: string) + " " + separateCharactersFromOddIndex(string: string)
+}
