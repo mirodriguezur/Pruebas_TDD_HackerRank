@@ -10,7 +10,7 @@ import XCTest
 
 class Day8ConsultPhoneBookDictionaryTest: XCTestCase {
 
-    func test_whenUserProvidesAnEmptyString_returnEmptyName(){
+    func test_whenUserProvidesAnEmptyString_returnFailsEmptyName(){
         //give
         let inputString = ""
         let expected = "fails, Empty name."

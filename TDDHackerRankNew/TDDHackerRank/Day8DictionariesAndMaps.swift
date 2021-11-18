@@ -20,7 +20,8 @@ func consultPhoneBook(nameKey: String) -> String {
     guard (phoneBook[nameKey] != nil) else {
         return "Not Found"
     }
-    return ""
+    
+    return phoneBook[nameKey]!
 }
 
 
