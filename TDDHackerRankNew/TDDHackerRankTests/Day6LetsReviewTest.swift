@@ -8,46 +8,16 @@
 import XCTest
 import TDDHackerRank
 
-class Day6StringTest: XCTestCase {
+class Day6SeparateAStringIntoTwoStringDependingWheterTheIndexIsEvenOrOddTest: XCTestCase {
 
-    func test_whenUserGivesString_returnCharacterFromEvenIndex() {
+    func test_whenUserProvidesString_returnCharacterFromEvenIndex() {
         //given
         let inputString = "Hacker"
-        let sut = Day6Strings(word: inputString)
-        let expectation = "Hce"
+        let expected = "Hce"
         // when
         
-        let result = sut.separateCharactersFromEvenIndex()
-        
-        
-        XCTAssertEqual(expectation, result)
+        let result = separateCharactersFromEvenIndexandOddIndex(string: inputString)
+        //then
+        XCTAssertEqual(expected, result)
     }
-    
-    func test_whenUserGivesString_returnCharacterFromOddIndex() {
-        //given
-        let inputString = "Hacker"
-        let sut = Day6Strings(word: inputString)
-        let expectation = "akr"
-        // when
-        
-        let result = sut.separateCharactersFromOddIndex()
-        
-        
-        XCTAssertEqual(expectation, result)
-    }
-    //Prueba general
-    
-    func test_whenUserGivesString_returnStringWithCharactersFromEvenIndexAndStringWithCharactersFromODDIndex() {
-        //given
-        let inputString = "Hacker"
-        let sut = Day6Strings(word: inputString)
-        let expectation = "Hce akr"
-        // when
-        
-        let result = sut.separateStringFromEvenAndOddIndex()
-        
-        
-        XCTAssertEqual(expectation, result)
-    }
-
 }
