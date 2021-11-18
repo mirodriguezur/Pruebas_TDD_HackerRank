@@ -17,6 +17,9 @@ func consultPhoneBook(nameKey: String) -> String {
     guard !nameKey.isEmpty else {
         return "fails, Empty name."
     }
+    guard (phoneBook[nameKey] != nil) else {
+        return "Not Found"
+    }
     return ""
 }
 
