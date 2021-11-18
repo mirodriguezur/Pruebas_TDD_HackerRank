@@ -20,4 +20,13 @@ class Day8ConsultPhoneBookDictionaryTest: XCTestCase {
         XCTAssertEqual(expected, result)
     }
     
+    func test_whenUserProvidesaNameThatIsNotInPhoneNumber_returnNotFound(){
+        //give
+        let inputString = "Michael"
+        let expected = "Not Found"
+        //when
+        let result = consultPhoneBook(nameKey: inputString)
+        //then
+        XCTAssertEqual(expected, result)
+    }
 }
