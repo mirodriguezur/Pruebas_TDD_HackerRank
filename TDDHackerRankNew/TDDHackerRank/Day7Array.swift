@@ -7,20 +7,24 @@
 
 import Foundation
 
-public func inverseArray(array: Array<Int>) -> Array<Int> {
+public func invertedArray(array: Array<Int>) -> Array<Int> {
     
     var newArray = Array<Int>()
+    var i = array.count - 1
     
-    if array.count > 1000 {
+    guard !(array.count > 1000) else {
         return [0]
-    } else {
-        var i = array.count - 1
-        
-        while i >= 0 {
-            newArray.append(array[i])
-            i -= 1
-        }
     }
+    
+    guard !array.isEmpty else {
+        return [0]
+    }
+    
+    while i >= 0 {
+        newArray.append(array[i])
+        i -= 1
+    }
+
     return newArray
 }
 
