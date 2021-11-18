@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import TDDHackerRank
+@testable import TDDHackerRank
 
 class Day6SeparateAStringIntoTwoStringDependingWheterTheIndexIsEvenOrOddTest: XCTestCase {
 
