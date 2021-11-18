@@ -31,4 +31,15 @@ class Day6SeparateAStringIntoTwoStringDependingWheterTheIndexIsEvenOrOddTest: XC
         //then
         XCTAssertEqual(expected, result)
     }
+    
+    func test_whenUserProvidesString_separateStringFromEvenAndOddIndex() {
+        //given
+        let inputString = "Hacker"
+        let expected = "Hce akr"
+        // when
+        
+        let result = separateCharactersCharactersFromEvenIndexandOddIndex(string: inputString)
+        //then
+        XCTAssertEqual(expected, result)
+    }
 }
