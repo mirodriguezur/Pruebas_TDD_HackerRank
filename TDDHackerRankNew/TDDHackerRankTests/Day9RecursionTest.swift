@@ -22,5 +22,16 @@ class Day9RecursiveFactorialTest: XCTestCase {
         //then
         XCTAssertNil(verification)
     }
-
+    
+    func test_whenUserProvidesANumber_OutsideOfTheValidRangeOfInput2to12_returnZero() {
+        //give
+        let inputNumber = 13
+        let expectValue = 0
+        
+        //when
+        let result = recursiveFactorial(number: inputNumber)
+        
+        //then
+        XCTAssertEqual(expectValue, result)
+    }
 }

@@ -9,5 +9,5 @@ import Foundation
 
 func recursiveFactorial(number: Int) -> Int {
     guard !(number == 0 || number == 1) else {return 1}
-    return 0
+    return 12
 }
