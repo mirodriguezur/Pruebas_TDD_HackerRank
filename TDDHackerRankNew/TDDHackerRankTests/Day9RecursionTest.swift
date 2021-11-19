@@ -34,4 +34,16 @@ class Day9RecursiveFactorialTest: XCTestCase {
         //then
         XCTAssertEqual(expectValue, result)
     }
+    
+    func test_whenUserProvidesANumber_InsideOfTheValidRangeOfInput2to12_returnFactorial() {
+        //give
+        let inputNumber = 5
+        let expectValue = 120
+        
+        //when
+        let result = recursiveFactorial(number: inputNumber)
+        
+        //then
+        XCTAssertEqual(expectValue, result)
+    }
 }
