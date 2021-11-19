@@ -25,7 +25,7 @@ class Day9RecursiveFactorialTest: XCTestCase {
     
     func test_whenUserProvidesANumber_OutsideOfTheValidRangeOfInput2to12_returnZero() {
         //give
-        let inputNumber = 13
+        let inputNumber = -3
         let expectValue = 0
         
         //when
