@@ -12,5 +12,5 @@ func recursiveFactorial(number: Int) -> Int {
     
     guard !(number > 12 || number < 2) else {return 0}
     
-    return 12
+    return number * recursiveFactorial(number: number - 1)
 }
