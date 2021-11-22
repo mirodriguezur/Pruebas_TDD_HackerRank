@@ -21,6 +21,18 @@ class Day10MaximumOnesConsecutiveInaBinaryNumberTest: XCTestCase {
         
         XCTAssertEqual(expected, result)
     }
+    
+    func test_whenUserProvidesaZeroNumber_printZero() {
+        
+        let inputNumber = 0
+        let expected = 0
+        
+        let result = maximunOnesConsecutivesInBinaryNumber(number: inputNumber)
+        
+        XCTAssertTrue(inputNumber == 0, "Fails, It's another number different from zero.")
+        
+        XCTAssertEqual(expected, result)
+    }
         
 }
     
