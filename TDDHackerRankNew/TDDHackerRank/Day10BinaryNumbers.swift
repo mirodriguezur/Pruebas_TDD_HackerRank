@@ -9,7 +9,7 @@ import Foundation
 
 func maximunOnesConsecutivesInBinaryNumber(number: Int) -> Int {
     
-    guard !(number < 0) else {
+    guard !(number <= 0) else {
         return 0
     }
     
