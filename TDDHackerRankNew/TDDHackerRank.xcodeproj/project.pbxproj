@@ -29,6 +29,7 @@
 		4C5678B52747F2350080A960 /* Day9Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5678B42747F2350080A960 /* Day9Recursion.swift */; };
 		4C5678BA2747F24E0080A960 /* Day9RecursionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5678B92747F24E0080A960 /* Day9RecursionTest.swift */; };
 		4C5678C3274C327A0080A960 /* Day10BinaryNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5678C2274C327A0080A960 /* Day10BinaryNumbers.swift */; };
+		4C5678D0274C38160080A960 /* Day10BinaryNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5678CF274C38160080A960 /* Day10BinaryNumbers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		4C5678B42747F2350080A960 /* Day9Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day9Recursion.swift; sourceTree = "<group>"; };
 		4C5678B92747F24E0080A960 /* Day9RecursionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day9RecursionTest.swift; sourceTree = "<group>"; };
 		4C5678C2274C327A0080A960 /* Day10BinaryNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10BinaryNumbers.swift; sourceTree = "<group>"; };
+		4C5678CF274C38160080A960 /* Day10BinaryNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10BinaryNumbers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				4C4A7F3527454E8C0076F106 /* Day7Array.swift */,
 				4C4A7F57274711C50076F106 /* Day8DictionariesAndMaps.swift */,
 				4C5678B42747F2350080A960 /* Day9Recursion.swift */,
+				4C5678CF274C38160080A960 /* Day10BinaryNumbers.swift */,
 			);
 			path = TDDHackerRank;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			files = (
 				4C08BAC42740B35000E70901 /* Day5Loops.swift in Sources */,
 				4C02712A273CDB43008EA9F1 /* Day4ClassVsInstance.swift in Sources */,
+				4C5678D0274C38160080A960 /* Day10BinaryNumbers.swift in Sources */,
 				4C08BACE2742333300E70901 /* Day6LetsReview.swift in Sources */,
 				4C5678B52747F2350080A960 /* Day9Recursion.swift in Sources */,
 				4C0270E8273CD5FC008EA9F1 /* ViewController.swift in Sources */,
