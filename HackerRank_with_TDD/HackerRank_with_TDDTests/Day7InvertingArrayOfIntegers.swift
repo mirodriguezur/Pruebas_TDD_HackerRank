@@ -61,6 +61,19 @@ class Day7InvertingArrayOfIntegers: XCTestCase {
         }
     }
     
+    func test_invertArray_WhenInputArrayContainsOneValueAbovePermited_thowsError() throws {
+        //given
+        let inputArray = [10001]
+        
+        do {
+            //when
+            try invertArray(inputArray)
+        } catch (let error) {
+            //then
+            XCTAssertEqual(error as! invertingArrayErrors, invertingArrayErrors.arrayContainsValueAbovePermited)
+        }
+    }
+    
 }
 
 // Production Code ------------------------------------------------
