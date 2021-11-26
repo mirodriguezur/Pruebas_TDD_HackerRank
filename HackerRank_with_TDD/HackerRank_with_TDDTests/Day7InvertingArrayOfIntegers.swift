@@ -82,6 +82,7 @@ enum invertingArrayErrors: Error {
     case inputArrayExcedesValidSize
     case emptyInput
     case arrayContainsValueBellowPermited
+    case arrayContainsValueAbovePermited
 }
 
 func invertArray(_ array: Array<Int>) throws {
@@ -93,6 +94,9 @@ func invertArray(_ array: Array<Int>) throws {
     }
     guard array.first(where: { $0 < 0 }) == nil else {
         throw invertingArrayErrors.arrayContainsValueBellowPermited
+    }
+    guard array.first(where: { $0 > 10000 }) == nil else {
+        throw invertingArrayErrors.arrayContainsValueAbovePermited
     }
     throw NSError(domain: "", code: 0)
     //    return array
