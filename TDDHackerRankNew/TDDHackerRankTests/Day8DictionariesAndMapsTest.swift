@@ -17,9 +17,11 @@ class Day8ConsultPhoneBookDictionaryTest: XCTestCase {
             //when
             _ = try consultPhoneBook(nameKey: emptyString)
         } catch (let error) {
+            //then
             XCTAssertEqual(error as! PhoneBookDictionaryErrors, PhoneBookDictionaryErrors.emptyInput)
         }
     }
+
 }
     
 

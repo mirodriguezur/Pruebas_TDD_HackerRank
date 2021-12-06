@@ -13,7 +13,14 @@ private let phoneBook = [
     "harry" : "12299933"
 ]
 
+enum PhoneBookDictionaryErrors: Error {
+    case emptyInput
+}
+
 func consultPhoneBook(nameKey: String) throws {
+    guard !nameKey.isEmpty else {
+        throw PhoneBookDictionaryErrors.emptyInput
+    }
 }
 
 
