@@ -13,15 +13,7 @@ private let phoneBook = [
     "harry" : "12299933"
 ]
 
-func consultPhoneBook(nameKey: String) -> String {
-    guard !nameKey.isEmpty else {
-        return "fails, Empty name."
-    }
-    guard (phoneBook[nameKey] != nil) else {
-        return "Not Found"
-    }
-    
-    return phoneBook[nameKey]!
+func consultPhoneBook(nameKey: String) throws {
 }
 
 

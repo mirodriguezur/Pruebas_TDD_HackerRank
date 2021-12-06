@@ -10,33 +10,16 @@ import XCTest
 
 class Day8ConsultPhoneBookDictionaryTest: XCTestCase {
 
-    func test_whenUserProvidesAnEmptyString_returnFailsEmptyName(){
-        //give
-        let inputString = ""
-        let expected = "fails, Empty name."
-        //when
-        let result = consultPhoneBook(nameKey: inputString)
-        //then
-        XCTAssertEqual(expected, result)
-    }
-    
-    func test_whenUserProvidesaNameThatIsNotInPhoneNumberBook_returnNotFound(){
-        //give
-        let inputString = "Michael"
-        let expected = "Not Found"
-        //when
-        let result = consultPhoneBook(nameKey: inputString)
-        //then
-        XCTAssertEqual(expected, result)
-    }
-    
-    func test_whenUserProvidesaNameThatIsInPhoneNumberBook_returnPhoneNumber(){
-        //give
-        let inputString = "sam"
-        let expected = "99912222"
-        //when
-        let result = consultPhoneBook(nameKey: inputString)
-        //then
-        XCTAssertEqual(expected, result)
+    func test_whenUserProvidesAnEmptyString_throwsError() throws {
+        //given
+        let emptyString = ""
+        do{
+            //when
+            _ = try consultPhoneBook(nameKey: emptyString)
+        } catch (let error) {
+            XCTAssertEqual(error as! PhoneBookDictionaryErrors, PhoneBookDictionaryErrors.emptyInput)
+        }
     }
 }
+    
+
