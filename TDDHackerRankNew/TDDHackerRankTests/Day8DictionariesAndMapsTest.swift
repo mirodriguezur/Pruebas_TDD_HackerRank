@@ -36,7 +36,24 @@ class Day8ConsultPhoneBookDictionaryTest: XCTestCase {
         }
         XCTAssertEqual(expected, result)
     }
-
+    
+    func test_whenUserProvidesaNameThatIsInPhoneNumberBook_returnNameAndPhoneNumber(){
+        //give
+        let inputString = "sam"
+        let expected = "99912222"
+        var result = ""
+        
+        do{
+            //when
+            result = try consultPhoneBook(nameKey: inputString)
+        } catch {
+            //then
+            print(error)
+            XCTFail("it is a valid nameKey.")
+        }
+        XCTAssertEqual(expected, result)
+    }
 }
+
     
 
