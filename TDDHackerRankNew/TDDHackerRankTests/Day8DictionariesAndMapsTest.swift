@@ -25,13 +25,16 @@ class Day8ConsultPhoneBookDictionaryTest: XCTestCase {
     func test_whenUserProvidesaNameThatIsNotInPhoneNumberBook_throwsError() throws {
         //give
         let inputString = "Michael"
+        let expected = "Not found"
+        var result = ""
         do{
             //when
-            _ = try consultPhoneBook(nameKey: inputString)
-        } catch (let error) {
+            result = try consultPhoneBook(nameKey: inputString)
+        } catch {
             // then
-            XCTAssertEqual(error as! PhoneBookDictionaryErrors, PhoneBookDictionaryErrors.unregisteredName)
+            XCTFail()
         }
+        XCTAssertEqual(expected, result)
     }
 
 }

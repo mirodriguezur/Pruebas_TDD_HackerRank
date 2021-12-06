@@ -15,16 +15,16 @@ private let phoneBook = [
 
 enum PhoneBookDictionaryErrors: Error {
     case emptyInput
-    case unregisteredName
 }
 
-func consultPhoneBook(nameKey: String) throws {
+func consultPhoneBook(nameKey: String) throws -> String {
     guard !nameKey.isEmpty else {
         throw PhoneBookDictionaryErrors.emptyInput
     }
     guard (phoneBook[nameKey] != nil) else {
-        throw PhoneBookDictionaryErrors.unregisteredName
+        return "Not found"
     }
+    return ""
 }
 
 
