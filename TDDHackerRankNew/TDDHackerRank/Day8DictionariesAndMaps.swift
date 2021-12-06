@@ -24,7 +24,7 @@ func consultPhoneBook(nameKey: String) throws -> String {
     guard (phoneBook[nameKey] != nil) else {
         return "Not found"
     }
-    return ""
+    return (nameKey+"="+phoneBook[nameKey]!)
 }
 
 

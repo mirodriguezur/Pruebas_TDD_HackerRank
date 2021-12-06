@@ -40,7 +40,7 @@ class Day8ConsultPhoneBookDictionaryTest: XCTestCase {
     func test_whenUserProvidesaNameThatIsInPhoneNumberBook_returnNameAndPhoneNumber(){
         //give
         let inputString = "sam"
-        let expected = "99912222"
+        let expected = "sam=99912222"
         var result = ""
         
         do{
