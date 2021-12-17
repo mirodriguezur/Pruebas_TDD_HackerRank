@@ -20,5 +20,8 @@ func recursiveFactorial(number: Int) throws -> Int {
         throw recursiveFactorialError.valueAbovePermited
     }
     
-    return 0
+    guard !(number == 1) else {return 1}
+    
+    let result = try(number * recursiveFactorial(number: number - 1))
+    return result
 }
