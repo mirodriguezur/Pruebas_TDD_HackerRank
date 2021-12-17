@@ -15,7 +15,9 @@ enum recursiveFactorialError: Error {
 func recursiveFactorial(number: Int) throws {
     guard !(number < 1) else {
         throw recursiveFactorialError.valueBellowPermited
-        
+    }
+    guard !(number > 12) else {
+        throw recursiveFactorialError.valueAbovePermited
     }
     
     throw NSError(domain: "Error", code: 0)
