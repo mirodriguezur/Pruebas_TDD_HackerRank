@@ -19,9 +19,8 @@ func recursiveFactorial(number: Int) throws -> Int {
     guard !(number > 12) else {
         throw recursiveFactorialError.valueAbovePermited
     }
-    
     guard !(number == 1) else {return 1}
     
-    let result = try(number * recursiveFactorial(number: number - 1))
-    return result
+    return try(number * recursiveFactorial(number: number - 1))
+    
 }
