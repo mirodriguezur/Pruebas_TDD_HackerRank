@@ -14,7 +14,6 @@ class Day9RecursiveFactorialTest: XCTestCase {
         //give
         let inputNumber = 0
         
-      
         do {
             //when
             _ = try recursiveFactorial(number: inputNumber)
@@ -23,5 +22,18 @@ class Day9RecursiveFactorialTest: XCTestCase {
             XCTAssertEqual(error as! recursiveFactorialError, recursiveFactorialError.valueBellowPermited)
         }
 
+    }
+    
+    func test_whenUserProivdesOneInvalidValueAbovePermited_throwsError() throws {
+        // give
+        let inputNumber = 13
+        
+        do {
+            //when
+            _ = try recursiveFactorial(number: inputNumber)
+        } catch (let error) {
+            //then
+            XCTAssertEqual(error as!recursiveFactorialError, recursiveFactorialError.valueAbovePermited)
+        }
     }
 }

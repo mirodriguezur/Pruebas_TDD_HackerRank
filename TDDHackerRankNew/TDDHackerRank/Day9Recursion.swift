@@ -9,9 +9,14 @@ import Foundation
 
 enum recursiveFactorialError: Error {
     case valueBellowPermited
+    case valueAbovePermited
 }
 
 func recursiveFactorial(number: Int) throws {
     guard !(number < 1) else {
-        throw recursiveFactorialError.valueBellowPermited}
+        throw recursiveFactorialError.valueBellowPermited
+        
+    }
+    
+    throw NSError(domain: "Error", code: 0)
 }
