@@ -7,10 +7,11 @@
 
 import Foundation
 
-func recursiveFactorial(number: Int) -> Int {
-    guard !(number == 0 || number == 1) else {return 1}
-    
-    guard !(number > 12 || number < 2) else {return 0}
-    
-    return number * recursiveFactorial(number: number - 1)
+enum recursiveFactorialError: Error {
+    case valueBellowPermited
+}
+
+func recursiveFactorial(number: Int) throws {
+    guard !(number < 1) else {
+        throw recursiveFactorialError.valueBellowPermited}
 }

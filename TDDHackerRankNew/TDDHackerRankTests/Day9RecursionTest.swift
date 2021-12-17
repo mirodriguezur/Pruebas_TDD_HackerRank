@@ -10,40 +10,18 @@ import XCTest
 
 class Day9RecursiveFactorialTest: XCTestCase {
 
-    func test_whenUserProvidesZeroOrOne_returnOne(){
+    func test_whenUserProvidesOneInvalidValueBellowPermited_throwsError() throws {
         //give
-        let numbersUnder2 = [0,1]
-        let expectValue = 1
+        let inputNumber = 0
         
-        //when
-        let results = numbersUnder2.map { recursiveFactorial(number: $0)
+      
+        do {
+            //when
+            _ = try recursiveFactorial(number: inputNumber)
+        } catch (let error) {
+            //then
+            XCTAssertEqual(error as! recursiveFactorialError, recursiveFactorialError.valueBellowPermited)
         }
-        let verification = results.first{$0 != expectValue}
-        //then
-        XCTAssertNil(verification)
-    }
-    
-    func test_whenUserProvidesANumber_OutsideOfTheValidRangeOfInput2to12_returnZero() {
-        //give
-        let inputNumber = -3
-        let expectValue = 0
-        
-        //when
-        let result = recursiveFactorial(number: inputNumber)
-        
-        //then
-        XCTAssertEqual(expectValue, result)
-    }
-    
-    func test_whenUserProvidesANumber_InsideOfTheValidRangeOfInput2to12_returnFactorial() {
-        //give
-        let inputNumber = 5
-        let expectValue = 120
-        
-        //when
-        let result = recursiveFactorial(number: inputNumber)
-        
-        //then
-        XCTAssertEqual(expectValue, result)
+
     }
 }
