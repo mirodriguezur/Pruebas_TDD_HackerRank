@@ -12,7 +12,7 @@ enum recursiveFactorialError: Error {
     case valueAbovePermited
 }
 
-func recursiveFactorial(number: Int) throws {
+func recursiveFactorial(number: Int) throws -> Int {
     guard !(number < 1) else {
         throw recursiveFactorialError.valueBellowPermited
     }
@@ -20,5 +20,5 @@ func recursiveFactorial(number: Int) throws {
         throw recursiveFactorialError.valueAbovePermited
     }
     
-    throw NSError(domain: "Error", code: 0)
+    return 0
 }
