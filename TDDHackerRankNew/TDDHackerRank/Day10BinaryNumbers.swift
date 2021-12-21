@@ -7,27 +7,14 @@
 
 import Foundation
 
-func maximunOnesConsecutivesInBinaryNumber(number: Int) -> Int {
-    
-    var inputNumber = number
-    var sum = 0
-    var max = 0
-    
-    guard !(number <= 0) else {
-        return 0
+enum binaryNumberError:Error {
+    case inputNumberBellowPermited
+}
+
+func maximunOnesConsecutivesInBinaryNumber(number: Int) throws {
+    guard !(number < 0) else {
+        throw binaryNumberError.inputNumberBellowPermited
     }
     
-    while inputNumber > 0 {
-        if inputNumber % 2 == 1 {
-            sum += 1
-            if sum > max {
-                max = sum
-            }
-        } else {
-            sum = 0
-        }
-        inputNumber = inputNumber / 2
-    }
-    
-    return max
+    throw NSError(domain: "Error", code: 0)
 }
