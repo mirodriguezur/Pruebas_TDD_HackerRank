@@ -23,6 +23,20 @@ class Day10MaximumOnesConsecutiveInaBinaryNumberTest: XCTestCase {
             XCTAssertEqual(error as! binaryNumberError, binaryNumberError.inputNumberBellowPermited)
         }
     }
+    
+    func test_whenUserProvidesNumberAbovePermited_throwError() throws {
+        //given
+        let inputNumber = 1000001
+        
+        do{
+            //when
+            _ = try maximunOnesConsecutivesInBinaryNumber(number: inputNumber)
+            
+        } catch (let error) {
+            // then
+            XCTAssertEqual(error as! binaryNumberError, binaryNumberError.inputNumberAbovePermited)
+        }
+    }
         
 }
     
