@@ -8,13 +8,13 @@
 import Foundation
 
 enum binaryNumberError:Error {
-    case inputNumberBellowPermited
+    case inputNumberBelowPermited
     case inputNumberAbovePermited
 }
 
 func maximunOnesConsecutivesInBinaryNumber(number: Int) throws {
-    guard !(number < 0) else {
-        throw binaryNumberError.inputNumberBellowPermited
+    guard !(number <= 0) else {
+        throw binaryNumberError.inputNumberBelowPermited
     }
     guard !(number > 1000000) else {
         throw binaryNumberError.inputNumberAbovePermited

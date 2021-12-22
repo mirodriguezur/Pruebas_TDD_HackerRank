@@ -10,9 +10,9 @@ import XCTest
 
 class Day10MaximumOnesConsecutiveInaBinaryNumberTest: XCTestCase {
 
-    func test_whenUserProvidesNegativeNumber_throwError() throws {
+    func test_whenUserProvidesNumberBelowPermited_throwError() throws {
         //given
-        let inputNumber = -3
+        let inputNumber = 0
         
         do{
             //when
@@ -20,7 +20,7 @@ class Day10MaximumOnesConsecutiveInaBinaryNumberTest: XCTestCase {
             
         } catch (let error) {
             // then
-            XCTAssertEqual(error as! binaryNumberError, binaryNumberError.inputNumberBellowPermited)
+            XCTAssertEqual(error as! binaryNumberError, binaryNumberError.inputNumberBelowPermited)
         }
     }
     
@@ -37,6 +37,13 @@ class Day10MaximumOnesConsecutiveInaBinaryNumberTest: XCTestCase {
             XCTAssertEqual(error as! binaryNumberError, binaryNumberError.inputNumberAbovePermited)
         }
     }
+    
+    
+    
+    //func //test_whenUserPovidesNumber_WithinTheAllowedRange_ReturnMaximumOnesConsecutiveIna//Binary() throws {
+        //given
+ //       let inputNumber =
+ //   }
         
 }
     
