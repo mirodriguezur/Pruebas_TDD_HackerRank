@@ -12,15 +12,13 @@ enum binaryNumberError:Error {
     case inputNumberAbovePermited
 }
 
-func maximunOnesConsecutivesInBinaryNumber(number: Int) throws {
-    guard !(number <= 0) else {
+func maximunOnesConsecutivesInBinaryNumber(number: Int) throws -> Int {
+    guard !(number <= 0) else  {
         throw binaryNumberError.inputNumberBelowPermited
     }
     guard !(number > 1000000) else {
         throw binaryNumberError.inputNumberAbovePermited
     }
     
-    
-    
-    throw NSError(domain: "Error", code: 0)
+    return 0
 }
