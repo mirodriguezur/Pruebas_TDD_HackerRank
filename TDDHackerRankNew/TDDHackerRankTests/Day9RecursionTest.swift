@@ -48,4 +48,19 @@ class Day9RecursiveFactorialTest: XCTestCase {
             XCTAssertEqual(error as! recursiveFactorialError, recursiveFactorialError.valueAbovePermited)
         }
     }
+        
+        func test_whenUserProvidesANumber_InsideOfTheValidRange_returnFactorial() throws {
+            //give
+            let input = (2...5)
+            let expected = [2,6,24,120]
+            var result = Array(repeating: 0, count: input.count)
+            do{
+                //when
+                result = try input.map{try factorial($0) }
+            } catch {
+                //then
+                XCTFail("It is a valid input number.it shouln't throw error")
+            }
+            XCTAssertEqual(result, expected)
+        }
 }

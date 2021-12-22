@@ -13,7 +13,7 @@ func factorial(_ number: Int) throws -> Int {
     else {
         throw recursiveFactorialError.valueAbovePermited
     }
-    return 0
+    return try(number * factorial(number - 1))
 }
 
 enum recursiveFactorialError: Error {
