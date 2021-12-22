@@ -9,62 +9,43 @@ import XCTest
 @testable import TDDHackerRank
 
 class Day9RecursiveFactorialTest: XCTestCase {
-
-    func test_whenUserProvidesOneInvalidValueBellowPermited_throwsError() throws {
-        //give
-        let inputNumber = 0
+    /*
+     domain 2 <= n <= 12
+     
+     */
+    
+    func testFactorial_whenInputIsBelowOne_returnsOne() throws {
+        let input = (-5...0)
+        let expected = Array(repeating: 1, count: input.count)
         
-        do {
-            //when
-            _ = try recursiveFactorial(number: inputNumber)
-        } catch (let error) {
-            //then
-            XCTAssertEqual(error as! recursiveFactorialError, recursiveFactorialError.valueBellowPermited)
-        }
-
+        //when
+        let result = try input.map{try factorial($0) }
+        
+        //then
+        XCTAssertEqual(result, expected)
     }
     
-    func test_whenUserProivdesOneInvalidValueAbovePermited_throwsError() throws {
+    func testFactorial_whenInputIsOne_returnsOne() throws {
+        let input = 1
+        let expected = 1
+        
+        //when
+        let result = try factorial(input)
+        
+        //then
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testFactorial_whenInputIsAboveMaximunValuePermited_throwError() throws {
         // give
-        let inputNumber = 13
+        let input = 13
         
         do {
             //when
-            _ = try recursiveFactorial(number: inputNumber)
+            _ = try factorial(input)
         } catch (let error) {
             //then
-            XCTAssertEqual(error as!recursiveFactorialError, recursiveFactorialError.valueAbovePermited)
+            XCTAssertEqual(error as! recursiveFactorialError, recursiveFactorialError.valueAbovePermited)
         }
-    }
-    
-    func test_whenUserProvidesANumber_InsideOfTheValidRange_returnFactorial() throws {
-        //give
-        let inputNumber = 5
-        let expectValue = 120
-        var result = 0
-        do{
-            //when
-            result = try recursiveFactorial(number: inputNumber)
-        } catch (let error) {
-            //then
-            print (error)
-            XCTFail("It is a valid input number.")
-        }
-        XCTAssertEqual(result, expectValue)
-    }
-    
-    func test_whenUserProvidesOne_returnOne() throws {
-        let inputNumber = 1
-        let expectValue = 1
-        var result = 0
-        
-        do{
-            //when
-            result = try recursiveFactorial(number: inputNumber)
-        } catch {
-            //then
-            XCTFail("It is a valid input number.")
-        }
-        XCTAssertEqual(result, expectValue)
     }
 }

@@ -7,20 +7,16 @@
 
 import Foundation
 
-enum recursiveFactorialError: Error {
-    case valueBellowPermited
-    case valueAbovePermited
-}
-
-func recursiveFactorial(number: Int) throws -> Int {
-    guard !(number < 1) else {
-        throw recursiveFactorialError.valueBellowPermited
-    }
-    guard !(number > 12) else {
+func factorial(_ number: Int) throws -> Int {
+    guard !(number <= 1) else { return 1 }
+    guard !(number > 12)
+    else {
         throw recursiveFactorialError.valueAbovePermited
     }
-    guard !(number == 1) else {return 1}
-    
-    return try(number * recursiveFactorial(number: number - 1))
-    
+    return 0
 }
+
+enum recursiveFactorialError: Error {
+    case valueAbovePermited
+}
+    
