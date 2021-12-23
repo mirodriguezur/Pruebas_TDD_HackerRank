@@ -17,9 +17,13 @@ class Day9RecursiveFactorialTest: XCTestCase {
     func testFactorial_whenInputIsBelowOne_returnsOne() throws {
         let input = (-5...0)
         let expected = Array(repeating: 1, count: input.count)
-        
-        //when
-        let result = try input.map{try factorial($0) }
+        var result = Array(repeating: 0, count: input.count)
+        do {
+            //when
+            result = try input.map{try factorial($0) }
+        } catch {
+            XCTFail("It is a valid input number.it shouln't throw error")
+        }
         
         //then
         XCTAssertEqual(result, expected)
@@ -28,10 +32,14 @@ class Day9RecursiveFactorialTest: XCTestCase {
     func testFactorial_whenInputIsOne_returnsOne() throws {
         let input = 1
         let expected = 1
+        var result = 0
         
-        //when
-        let result = try factorial(input)
-        
+        do {
+            //when
+            result = try factorial(input)
+        } catch {
+            XCTFail("It is a valid input number.it shouln't throw error")
+        }
         //then
         XCTAssertEqual(result, expected)
     }
