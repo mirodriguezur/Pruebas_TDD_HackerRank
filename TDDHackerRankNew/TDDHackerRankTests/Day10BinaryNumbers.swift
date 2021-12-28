@@ -9,7 +9,9 @@ import XCTest
 @testable import TDDHackerRank
 
 class Day10MaximumOnesConsecutiveInaBinaryNumberTest: XCTestCase {
-
+   
+    /* Domain: 1 <= n <= 1000000*/
+    
     func test_whenUserProvidesNumberBelowPermited_throwError() throws {
         //given
         let inputNumber = 0
