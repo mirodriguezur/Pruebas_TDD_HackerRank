@@ -58,11 +58,23 @@ class Day12InheritanceTest: XCTestCase {
         }
     }
     
+    func test_whenUserProvidesLastALengthOfIDNumberDifferentToSeven_throwError() throws {
+        //given
+        let idNumber = 123
+        do {
+            //when
+            let _ = try Student(firstName: "Michael", lastName: "Rodriguez", id: idNumber)
+        } catch (let error) {
+            //then
+            XCTAssertEqual(error as! objectPersonError, objectPersonError.errorIdNumber)
+        }
+    }
 }
 
 enum objectPersonError:Error {
     case errorFirstName
     case errorLastName
+    case errorIdNumber
 }
 
 // Class Person
@@ -92,6 +104,7 @@ class Student: Person {
     override init(firstName: String, lastName: String, id: Int) throws {
         guard !(firstName.isEmpty || firstName.count > 10 ) else { throw objectPersonError.errorFirstName }
         guard !(lastName.isEmpty || lastName.count > 10) else { throw objectPersonError.errorLastName }
+        guard !(id > 7 || id < 7) else {throw objectPersonError.errorIdNumber}
         try super.init(firstName: firstName, lastName: lastName, id: id)
     }
     
