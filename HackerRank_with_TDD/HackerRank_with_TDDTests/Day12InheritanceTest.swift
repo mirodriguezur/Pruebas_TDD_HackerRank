@@ -11,10 +11,10 @@ class Day12InheritanceTest: XCTestCase {
 
     func test_whenUserProvidesEmptyFirstName_throwError() throws {
         //given
-        let name = ""
+        let firstName = ""
         do {
             //when
-            let _ = try Student(firstName: name, lastName: "prueba", id: 1234567)
+            let _ = try Student(firstName: firstName, lastName: "Ruiz", id: 1234567)
         } catch (let error) {
             //then
             XCTAssertEqual(error as! objectPersonError, objectPersonError.errorFirstName)
@@ -24,19 +24,45 @@ class Day12InheritanceTest: XCTestCase {
     
     func test_whenUserProvidesFirstNameWithMoreThanOrEqualTenLetters_throwError() throws {
         //given
-        let name = "Guillermina"
+        let firstName = "Guillermina"
         do {
             //when
-            let _ = try Student(firstName: name, lastName: "prueba", id: 1234567)
+            let _ = try Student(firstName: firstName, lastName: "Ruiz", id: 1234567)
         } catch (let error) {
             //then
             XCTAssertEqual(error as! objectPersonError, objectPersonError.errorFirstName)
         }
     }
+    
+    func test_whenUserProvidesEmptyLastName_throwError() throws {
+        //given
+        let lastName = ""
+        do {
+            //when
+            let _ = try Student(firstName: "Michael", lastName: lastName, id: 1234567)
+        } catch (let error) {
+            //then
+            XCTAssertEqual(error as! objectPersonError, objectPersonError.errorLastName)
+        }
+    }
+    
+    func test_whenUserProvidesLastNameWithMoreThanOrEqualTenLetters_throwError() throws {
+        //given
+        let lastName = "Compagnucci"
+        do {
+            //when
+            let _ = try Student(firstName: "Michael", lastName: lastName, id: 1234567)
+        } catch (let error) {
+            //then
+            XCTAssertEqual(error as! objectPersonError, objectPersonError.errorLastName)
+        }
+    }
+    
 }
 
 enum objectPersonError:Error {
     case errorFirstName
+    case errorLastName
 }
 
 // Class Person
@@ -65,6 +91,7 @@ class Student: Person {
     
     override init(firstName: String, lastName: String, id: Int) throws {
         guard !(firstName.isEmpty || firstName.count > 10 ) else { throw objectPersonError.errorFirstName }
+        guard !(lastName.isEmpty || lastName.count > 10) else { throw objectPersonError.errorLastName }
         try super.init(firstName: firstName, lastName: lastName, id: id)
     }
     
