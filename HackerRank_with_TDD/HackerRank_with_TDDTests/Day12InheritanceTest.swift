@@ -81,6 +81,25 @@ class Day12InheritanceTest: XCTestCase {
             XCTAssertEqual(error as! objectPersonError, objectPersonError.errorRangeScore)
         }
     }
+    
+    func test_whenUserProvidesAValidData_returnScoreLetter() throws {
+        //given
+        let firstName = "Heraldo"
+        let lastName = "Memelli"
+        let idNumber = 8135627
+        let scores = [82, 34, 98]
+        let Expected = Character("A")
+        
+        do {
+            //when
+            let sut = try Student(firstName: firstName, lastName: lastName, id: idNumber, scores: scores)
+            
+            XCTAssertEqual(sut.calculate(),Expected)
+        } catch {
+            XCTFail("It should not enter this block.")
+        }
+    }
+    
 }
 
 enum objectPersonError:Error {
