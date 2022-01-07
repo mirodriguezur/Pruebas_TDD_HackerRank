@@ -17,7 +17,7 @@ class Day12InheritanceTest: XCTestCase {
             let _ = try Student(firstName: firstName, lastName: "Ruiz", id: 1234567, scores: [100, 80])
         } catch (let error) {
             //then
-            XCTAssertEqual(error as! objectPersonError, objectPersonError.errorFirstName)
+            XCTAssertEqual(error as! objectPersonError, objectPersonError.invalidFirstName)
         }
         
     }
@@ -30,7 +30,7 @@ class Day12InheritanceTest: XCTestCase {
             let _ = try Student(firstName: firstName, lastName: "Ruiz", id: 1234567, scores: [100, 80])
         } catch (let error) {
             //then
-            XCTAssertEqual(error as! objectPersonError, objectPersonError.errorFirstName)
+            XCTAssertEqual(error as! objectPersonError, objectPersonError.invalidFirstName)
         }
     }
     
@@ -42,7 +42,7 @@ class Day12InheritanceTest: XCTestCase {
             let _ = try Student(firstName: "Michael", lastName: lastName, id: 1234567, scores: [100, 80])
         } catch (let error) {
             //then
-            XCTAssertEqual(error as! objectPersonError, objectPersonError.errorLastName)
+            XCTAssertEqual(error as! objectPersonError, objectPersonError.invalidLastName)
         }
     }
     
@@ -54,7 +54,7 @@ class Day12InheritanceTest: XCTestCase {
             let _ = try Student(firstName: "Michael", lastName: lastName, id: 1234567, scores: [100, 80])
         } catch (let error) {
             //then
-            XCTAssertEqual(error as! objectPersonError, objectPersonError.errorLastName)
+            XCTAssertEqual(error as! objectPersonError, objectPersonError.invalidLastName)
         }
     }
     
@@ -66,19 +66,32 @@ class Day12InheritanceTest: XCTestCase {
             let _ = try Student(firstName: "Michael", lastName: "Rodriguez", id: idNumber, scores: [100, 80])
         } catch (let error) {
             //then
-            XCTAssertEqual(error as! objectPersonError, objectPersonError.errorIdNumber)
+            XCTAssertEqual(error as! objectPersonError, objectPersonError.invalidIdNumber)
         }
     }
+    
+    func test_whenUserProvidesAnEmptyArrayScore_throwError() throws {
+        //given
+
+        do {
+            //when
+            let _ = try Student(firstName: "Michael", lastName: "Rodriguez", id: 1234567, scores: [])
+        } catch (let error) {
+            //then
+            XCTAssertEqual(error as! objectPersonError, objectPersonError.emptyScoreInput)
+        }
+    }
+    
     // Domain score ->  0 <= score <= 100
     func test_whenUserProvidesAnElementOfScoreDifferentFromRange_throwError() throws {
         //given
-        let scores = [101, 0]
+        let scores = [101, 45]
         do {
             //when
             let _ = try Student(firstName: "Michael", lastName: "Rodriguez", id: 1234567, scores: scores)
         } catch (let error) {
             //then
-            XCTAssertEqual(error as! objectPersonError, objectPersonError.errorRangeScore)
+            XCTAssertEqual(error as! objectPersonError, objectPersonError.wrongScoreRange)
         }
     }
     
@@ -103,10 +116,11 @@ class Day12InheritanceTest: XCTestCase {
 }
 
 enum objectPersonError:Error {
-    case errorFirstName
-    case errorLastName
-    case errorIdNumber
-    case errorRangeScore
+    case invalidFirstName
+    case invalidLastName
+    case invalidIdNumber
+    case emptyScoreInput
+    case wrongScoreRange
 }
 
 // Class Person
@@ -135,10 +149,11 @@ class Student: Person {
     
     init(firstName: String, lastName: String, id: Int, scores: [Int]) throws {
         let idString = String(id)
-        guard !(firstName.isEmpty || firstName.count > 10 ) else { throw objectPersonError.errorFirstName }
-        guard !(lastName.isEmpty || lastName.count > 10) else { throw objectPersonError.errorLastName }
-        guard !(idString.count != 7 ) else {throw objectPersonError.errorIdNumber}
-        guard !(scores.first! > 100 || scores.first! < 0 ) else {throw objectPersonError.errorRangeScore}
+        guard !(firstName.isEmpty || firstName.count > 10 ) else { throw objectPersonError.invalidFirstName }
+        guard !(lastName.isEmpty || lastName.count > 10) else { throw objectPersonError.invalidLastName }
+        guard !(idString.count != 7 ) else {throw objectPersonError.invalidIdNumber}
+        guard !(scores.isEmpty) else {throw objectPersonError.emptyScoreInput}
+        guard !(scores.first! > 100 || scores.first! < 0 ) else {throw objectPersonError.wrongScoreRange}
         self.testScores = scores
         try super.init(firstName: firstName, lastName: lastName, id: id)
     }

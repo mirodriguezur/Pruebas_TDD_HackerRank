@@ -78,9 +78,6 @@ class Day14Difference: XCTestCase {
             XCTFail("It should not enter this block.")
         }
     }
-
-
-
 }
 
 enum differenceErrors: Error {
