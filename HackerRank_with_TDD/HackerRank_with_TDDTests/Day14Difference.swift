@@ -61,6 +61,24 @@ class Day14Difference: XCTestCase {
             XCTAssertEqual(error as! differenceErrors, differenceErrors.arrayContainsValueAbovePermited)
         }
     }
+    
+    func test_whenUsersProvidesAValidArray_ComputeDifference() throws {
+        //given
+        let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        let expected = 9
+        
+        do {
+            //when
+            let sut = try Difference(array: array)
+            sut.computeDifference()
+            let result = sut.maximunDifference
+            //Then
+            XCTAssertEqual(expected, result)
+        } catch {
+            XCTFail("It should not enter this block.")
+        }
+    }
+
 
 
 }
@@ -83,6 +101,10 @@ class Difference {
         guard array.first(where: { $0 > 100 }) == nil else {throw differenceErrors.arrayContainsValueAbovePermited}
         elements = array
         maximunDifference = 0
+    }
+    
+    func computeDifference() {
+        maximunDifference = ((elements.max() ?? 0) - (elements.min() ?? 0) )
     }
     
 }
