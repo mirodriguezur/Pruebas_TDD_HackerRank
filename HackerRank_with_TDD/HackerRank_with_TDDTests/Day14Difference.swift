@@ -22,7 +22,7 @@ class Day14Difference: XCTestCase {
     }
     
     // Valid Size:  1 <= sizeArray <=10
-    func test_invertArray_WhenInputArraySizeIsGreaterThanValidSize_thowsError() throws {
+    func test_WhenInputArraySizeIsGreaterThanValidSize_thowsError() throws {
         //given
         let invalidArraySize = 11
         let inputInvalidArray = Array(repeating: Int(), count: invalidArraySize)
@@ -35,6 +35,19 @@ class Day14Difference: XCTestCase {
             XCTAssertEqual(error as! differenceErrors, differenceErrors.inputArrayExcedesValidSize)
         }
     }
+    
+    func test_whenArrayContainsElementsBelowTheAllowedRange_throwsError() throws {
+        //given
+        let array = [1, 2, 0, 3]
+        
+        do {
+            //when
+            _ = try Difference(array: array)
+        } catch (let error) {
+            //then
+            XCTAssertEqual(error as! differenceErrors, differenceErrors.arrayContainsValueBelowPermited)
+        }
+    }
 
 
 }
@@ -42,6 +55,7 @@ class Day14Difference: XCTestCase {
 enum differenceErrors: Error {
     case emptyInput
     case inputArrayExcedesValidSize
+    case arrayContainsValueBelowPermited
 }
 
 class Difference {
@@ -51,6 +65,7 @@ class Difference {
     init (array: Array<Int>) throws {
         guard !(array.isEmpty) else {throw differenceErrors.emptyInput}
         guard !(array.count > 10) else {throw differenceErrors.inputArrayExcedesValidSize}
+        guard array.first(where: { $0 < 1 }) == nil else {throw differenceErrors.arrayContainsValueBelowPermited}
         elements = array
         maximunDifference = 0
     }
