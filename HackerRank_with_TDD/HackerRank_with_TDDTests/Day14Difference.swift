@@ -14,26 +14,44 @@ class Day14Difference: XCTestCase {
         
         do {
             // when
-            _ = try Difference(matriz: [])
+            _ = try Difference(array: [])
         } catch (let error) {
             //then
             XCTAssertEqual(error as! differenceErrors, differenceErrors.emptyInput)
         }
     }
+    
+    // Valid Size:  1 <= sizeArray <=10
+    func test_invertArray_WhenInputArraySizeIsGreaterThanValidSize_thowsError() throws {
+        //given
+        let invalidArraySize = 11
+        let inputInvalidArray = Array(repeating: Int(), count: invalidArraySize)
+        
+        do {
+            //when
+            _ = try Difference(array: inputInvalidArray)
+        } catch (let error) {
+            //then
+            XCTAssertEqual(error as! differenceErrors, differenceErrors.inputArrayExcedesValidSize)
+        }
+    }
+
 
 }
 
 enum differenceErrors: Error {
     case emptyInput
+    case inputArrayExcedesValidSize
 }
 
 class Difference {
     private var elements = [Int]()
     var maximunDifference: Int
     
-    init (matriz: Array<Int>) throws {
-        guard !(matriz.isEmpty) else {throw differenceErrors.emptyInput}
-        elements = matriz
+    init (array: Array<Int>) throws {
+        guard !(array.isEmpty) else {throw differenceErrors.emptyInput}
+        guard !(array.count > 10) else {throw differenceErrors.inputArrayExcedesValidSize}
+        elements = array
         maximunDifference = 0
     }
     
