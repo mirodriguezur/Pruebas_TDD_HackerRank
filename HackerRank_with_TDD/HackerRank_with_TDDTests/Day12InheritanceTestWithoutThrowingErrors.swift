@@ -50,6 +50,34 @@ class Day12InheritanceTestWithoutThrowingErrors: XCTestCase {
         let result = sut.calculate()
         XCTAssertEqual(result, expected)
     }
+    
+    func test_whenUserProvidesScores_ifTheAverageOfTheGradesIsBetween55And70_returnTheCharacterP() {
+        //given
+        let firstName = "Heraldo"
+        let lastName = "Memeli"
+        let idNumber = 8135627
+        let scores = [70, 55]
+        let expected:Character = "P"
+        //when
+        let sut = Student(firstName: firstName, lastName: lastName, id: idNumber, scores: scores)
+        // then
+        let result = sut.calculate()
+        XCTAssertEqual(result, expected)
+    }
+    
+    func test_whenUserProvidesScores_ifTheAverageOfTheGradesIsBetween40And55_returnTheCharacterD() {
+        //given
+        let firstName = "Heraldo"
+        let lastName = "Memeli"
+        let idNumber = 8135627
+        let scores = [55, 40]
+        let expected:Character = "D"
+        //when
+        let sut = Student(firstName: firstName, lastName: lastName, id: idNumber, scores: scores)
+        // then
+        let result = sut.calculate()
+        XCTAssertEqual(result, expected)
+    }
 
 }
 
@@ -93,8 +121,14 @@ class Student: Person {
         else if (average >= 70 && average < 80) {
             return "A"
         }
-        else {
+        else if (average >= 55 && average < 70) {
             return "P"
+        }
+        else if (average >= 40 && average < 55) {
+            return "D"
+        }
+        else {
+            return "S"
         }
     }
 
