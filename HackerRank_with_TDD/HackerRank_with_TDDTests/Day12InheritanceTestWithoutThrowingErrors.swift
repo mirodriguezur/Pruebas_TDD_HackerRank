@@ -115,7 +115,7 @@ class Person {
 } // End of class Person
 
 class Student: Person {
-    var testScores: [Int]
+    private(set) var testScores: [Int]
     
     init(firstName: String, lastName: String, id: Int, scores: [Int]) {
         self.testScores = scores
