@@ -14,7 +14,7 @@ class Day12InheritanceTestWithThrowingErrors: XCTestCase {
         let firstName = ""
         do {
             //when
-            let _ = try Student(firstName: firstName, lastName: "Ruiz", id: 1234567, scores: [100, 80])
+            let _ = try Estudiante(firstName: firstName, lastName: "Ruiz", id: 1234567, scores: [100, 80])
         } catch (let error) {
             //then
             XCTAssertEqual(error as! objectPersonError, objectPersonError.invalidFirstName)
@@ -27,7 +27,7 @@ class Day12InheritanceTestWithThrowingErrors: XCTestCase {
         let firstName = "Guillermina"
         do {
             //when
-            let _ = try Student(firstName: firstName, lastName: "Ruiz", id: 1234567, scores: [100, 80])
+            let _ = try Estudiante(firstName: firstName, lastName: "Ruiz", id: 1234567, scores: [100, 80])
         } catch (let error) {
             //then
             XCTAssertEqual(error as! objectPersonError, objectPersonError.invalidFirstName)
@@ -39,7 +39,7 @@ class Day12InheritanceTestWithThrowingErrors: XCTestCase {
         let lastName = ""
         do {
             //when
-            let _ = try Student(firstName: "Michael", lastName: lastName, id: 1234567, scores: [100, 80])
+            let _ = try Estudiante(firstName: "Michael", lastName: lastName, id: 1234567, scores: [100, 80])
         } catch (let error) {
             //then
             XCTAssertEqual(error as! objectPersonError, objectPersonError.invalidLastName)
@@ -51,7 +51,7 @@ class Day12InheritanceTestWithThrowingErrors: XCTestCase {
         let lastName = "Compagnucci"
         do {
             //when
-            let _ = try Student(firstName: "Michael", lastName: lastName, id: 1234567, scores: [100, 80])
+            let _ = try Estudiante(firstName: "Michael", lastName: lastName, id: 1234567, scores: [100, 80])
         } catch (let error) {
             //then
             XCTAssertEqual(error as! objectPersonError, objectPersonError.invalidLastName)
@@ -63,7 +63,7 @@ class Day12InheritanceTestWithThrowingErrors: XCTestCase {
         let idNumber = 999
         do {
             //when
-            let _ = try Student(firstName: "Michael", lastName: "Rodriguez", id: idNumber, scores: [100, 80])
+            let _ = try Estudiante(firstName: "Michael", lastName: "Rodriguez", id: idNumber, scores: [100, 80])
         } catch (let error) {
             //then
             XCTAssertEqual(error as! objectPersonError, objectPersonError.invalidIdNumber)
@@ -75,7 +75,7 @@ class Day12InheritanceTestWithThrowingErrors: XCTestCase {
 
         do {
             //when
-            let _ = try Student(firstName: "Michael", lastName: "Rodriguez", id: 1234567, scores: [])
+            let _ = try Estudiante(firstName: "Michael", lastName: "Rodriguez", id: 1234567, scores: [])
         } catch (let error) {
             //then
             XCTAssertEqual(error as! objectPersonError, objectPersonError.emptyScoreInput)
@@ -88,7 +88,7 @@ class Day12InheritanceTestWithThrowingErrors: XCTestCase {
         let scores = [101, 45]
         do {
             //when
-            let _ = try Student(firstName: "Michael", lastName: "Rodriguez", id: 1234567, scores: scores)
+            let _ = try Estudiante(firstName: "Michael", lastName: "Rodriguez", id: 1234567, scores: scores)
         } catch (let error) {
             //then
             XCTAssertEqual(error as! objectPersonError, objectPersonError.wrongScoreRange)
@@ -105,7 +105,7 @@ class Day12InheritanceTestWithThrowingErrors: XCTestCase {
         
         do {
             //when
-            let sut = try Student(firstName: firstName, lastName: lastName, id: idNumber, scores: scores)
+            let sut = try Estudiante(firstName: firstName, lastName: lastName, id: idNumber, scores: scores)
             
             XCTAssertEqual(sut.calculate(),Expected)
         } catch {
@@ -124,7 +124,7 @@ enum objectPersonError:Error {
 }
 
 // Class Person
-class Person {
+class Persona {
     private let firstName: String
     private let lastName: String
     private let id: Int
@@ -143,7 +143,7 @@ class Person {
     }
 }
 
-class Student: Person {
+class Estudiante: Persona {
     
     var testScores: [Int]
     
