@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C2648BC2784A99100253773 /* Day12InheritanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2648BB2784A99100253773 /* Day12InheritanceTest.swift */; };
+		4C2648BC2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2648BB2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift */; };
 		4C7BA051275091BD00702318 /* HackerRank_with_TDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7BA047275091BD00702318 /* HackerRank_with_TDD.framework */; };
 		4C7BA056275091BD00702318 /* HackerRank_with_TDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BA055275091BD00702318 /* HackerRank_with_TDDTests.swift */; };
 		4C7BA058275091BD00702318 /* HackerRank_with_TDD.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7BA04A275091BD00702318 /* HackerRank_with_TDD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C7BA0642750932400702318 /* Day7InvertingArrayOfIntegers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BA0632750932400702318 /* Day7InvertingArrayOfIntegers.swift */; };
 		4C7BA0682750936900702318 /* Day7InvertingArrayOfIntegers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BA0672750936900702318 /* Day7InvertingArrayOfIntegers.swift */; };
 		4C96FECF2788A623001FED2E /* Day14Difference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96FECE2788A623001FED2E /* Day14Difference.swift */; };
+		4CDE9954278F462800568FE0 /* Day12InheritanceTestWithoutThrowingErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDE9953278F462800568FE0 /* Day12InheritanceTestWithoutThrowingErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C2648BB2784A99100253773 /* Day12InheritanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12InheritanceTest.swift; sourceTree = "<group>"; };
+		4C2648BB2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12InheritanceTestWithThrowingErrors.swift; sourceTree = "<group>"; };
 		4C7BA047275091BD00702318 /* HackerRank_with_TDD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HackerRank_with_TDD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7BA04A275091BD00702318 /* HackerRank_with_TDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HackerRank_with_TDD.h; sourceTree = "<group>"; };
 		4C7BA04B275091BD00702318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +38,7 @@
 		4C7BA0632750932400702318 /* Day7InvertingArrayOfIntegers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day7InvertingArrayOfIntegers.swift; sourceTree = "<group>"; };
 		4C7BA0672750936900702318 /* Day7InvertingArrayOfIntegers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day7InvertingArrayOfIntegers.swift; sourceTree = "<group>"; };
 		4C96FECE2788A623001FED2E /* Day14Difference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day14Difference.swift; sourceTree = "<group>"; };
+		4CDE9953278F462800568FE0 /* Day12InheritanceTestWithoutThrowingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12InheritanceTestWithoutThrowingErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +94,8 @@
 				4C7BA055275091BD00702318 /* HackerRank_with_TDDTests.swift */,
 				4C7BA057275091BD00702318 /* Info.plist */,
 				4C7BA0672750936900702318 /* Day7InvertingArrayOfIntegers.swift */,
-				4C2648BB2784A99100253773 /* Day12InheritanceTest.swift */,
+				4C2648BB2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift */,
+				4CDE9953278F462800568FE0 /* Day12InheritanceTestWithoutThrowingErrors.swift */,
 				4C96FECE2788A623001FED2E /* Day14Difference.swift */,
 			);
 			path = HackerRank_with_TDDTests;
@@ -216,8 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C7BA056275091BD00702318 /* HackerRank_with_TDDTests.swift in Sources */,
-				4C2648BC2784A99100253773 /* Day12InheritanceTest.swift in Sources */,
+				4C2648BC2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift in Sources */,
 				4C96FECF2788A623001FED2E /* Day14Difference.swift in Sources */,
+				4CDE9954278F462800568FE0 /* Day12InheritanceTestWithoutThrowingErrors.swift in Sources */,
 				4C7BA0682750936900702318 /* Day7InvertingArrayOfIntegers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

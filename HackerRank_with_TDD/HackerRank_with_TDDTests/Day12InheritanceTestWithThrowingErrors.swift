@@ -7,7 +7,7 @@
 
 import XCTest
 
-class Day12InheritanceTest: XCTestCase {
+class Day12InheritanceTestWithThrowingErrors: XCTestCase {
 
     func test_whenUserProvidesEmptyFirstName_throwError() throws {
         //given
