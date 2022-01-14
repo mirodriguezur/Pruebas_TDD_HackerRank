@@ -20,8 +20,23 @@ class Day16StringToIntTypeCastingErrorTest: XCTestCase {
             // then
             XCTAssertEqual(error as! StringToIntTypecastingError, StringToIntTypecastingError.BadString)
         }
-
     }
+    
+    func test_whenUserProvidesStringWithNumbers_returnIntWithEqualNumber () throws {
+        //given
+        let inputString = "3"
+        let expected = 3
+        
+        do {
+            //when
+            let result = try stringToInt(inputString: inputString)
+            //then
+            XCTAssertEqual(expected, result)
+        } catch (let error) {
+            XCTAssertEqual(error as! StringToIntTypecastingError, StringToIntTypecastingError.BadString)
+        }
+    }
+        
 
 }
 
@@ -37,5 +52,5 @@ func stringToInt(inputString: String) throws -> Int  {
         throw StringToIntTypecastingError.BadString
     }
     
-    return 0
+    return Int(inputString)!
 }
