@@ -14,12 +14,27 @@ class Day15LinkedListTest: XCTestCase {
         let head: Node? = nil
         let nodeData = 2
         let expectedNode: Node? = Node(data: nodeData)
+        let expectedDataNode = " 2"
         //when
         let node: Node? = insert(head: head, data: nodeData)
         //then
         XCTAssertNotNil(node)
         XCTAssertEqual(expectedNode, node)
+        XCTAssertEqual(expectedDataNode, display(head: node))
     }
+    
+    func test_insert_notNullHead_createsNewNode () {
+        //given
+        let nodeDataHead = 2
+        let head = Node(data: nodeDataHead)
+        let nodeData = 3
+        let expectedDataNode = " 2 3"
+        //when
+        let _: Node? = insert(head: head, data: nodeData)
+        //then
+        XCTAssertEqual(expectedDataNode, display(head: head))
+    }
+    
     
 }
 
@@ -40,20 +55,25 @@ class Node {
 }
 
 func insert(head: Node?, data: Int!) -> Node? {
-    var newNode: Node?
+    var headNode = head
+    let nextNode = Node(data: data)
     
-    if (head == nil) {
-        newNode = Node(data: data)
+    if (headNode == nil) {
+        headNode = Node(data: data)
+        return headNode
     }
-    return newNode
+    
+    headNode?.next = nextNode
+    
+    return headNode
 }
 
 func display(head: Node?) -> String {
     var current = head
-    var result = ""
+    var result = String()
 
     while current != nil {
-        result = result + "\(current!.data)"
+        result = result + " " + "\(current!.data)"
         current = current!.next
     }
     
