@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1BB8B32791CBC500E73558 /* Day16StringToIntTypeCastingErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BB8B22791CBC500E73558 /* Day16StringToIntTypeCastingErrorTest.swift */; };
 		4C2648BC2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2648BB2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift */; };
 		4C7BA051275091BD00702318 /* HackerRank_with_TDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7BA047275091BD00702318 /* HackerRank_with_TDD.framework */; };
 		4C7BA056275091BD00702318 /* HackerRank_with_TDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BA055275091BD00702318 /* HackerRank_with_TDDTests.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C1BB8B22791CBC500E73558 /* Day16StringToIntTypeCastingErrorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day16StringToIntTypeCastingErrorTest.swift; sourceTree = "<group>"; };
 		4C2648BB2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12InheritanceTestWithThrowingErrors.swift; sourceTree = "<group>"; };
 		4C7BA047275091BD00702318 /* HackerRank_with_TDD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HackerRank_with_TDD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7BA04A275091BD00702318 /* HackerRank_with_TDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HackerRank_with_TDD.h; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				4CDE9953278F462800568FE0 /* Day12InheritanceTestWithoutThrowingErrors.swift */,
 				4C96FECE2788A623001FED2E /* Day14Difference.swift */,
 				4CDE99592791118600568FE0 /* Day15LinkedListTest.swift */,
+				4C1BB8B22791CBC500E73558 /* Day16StringToIntTypeCastingErrorTest.swift */,
 			);
 			path = HackerRank_with_TDDTests;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				4CDE995A2791118600568FE0 /* Day15LinkedListTest.swift in Sources */,
 				4CDE9954278F462800568FE0 /* Day12InheritanceTestWithoutThrowingErrors.swift in Sources */,
 				4C7BA0682750936900702318 /* Day7InvertingArrayOfIntegers.swift in Sources */,
+				4C1BB8B32791CBC500E73558 /* Day16StringToIntTypeCastingErrorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
