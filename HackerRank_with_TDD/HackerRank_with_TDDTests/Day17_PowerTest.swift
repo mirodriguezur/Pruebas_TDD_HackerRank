@@ -40,6 +40,25 @@ class Day17_PowerTest: XCTestCase {
         }
     }
     
+    func test_whenUserProvidesPositivesIntegers_returnPowerResult () throws {
+            //given
+            let base = 3
+            let exponent = 5
+            let expected = 243
+            
+            do {
+                //when
+                let sut = Calculator()
+                let result = try sut.power(n: base, p: exponent)
+                //then
+                XCTAssertEqual(result, expected)
+                
+            } catch  {
+                //then
+                XCTAssertEqual(error as! RangeError, RangeError.NotInRange("n and p should be non-negative"))
+            }
+        }
+    
 }
 
 // Defining enum for throwing error
@@ -53,9 +72,10 @@ extension RangeError: Equatable {}
 // Start of class Calculator
 class Calculator {
     // Start of function power
-    func power(n: Int, p: Int) throws {
+    func power(n: Int, p: Int) throws -> Int {
         // Add your code here
         guard !(n < 0 || p < 0) else { throw RangeError.NotInRange("n and p should be non-negative")}
-        throw NSError(domain: "RangeError", code: 0)
+        let result = pow(Double(n), Double(p))
+        return Int(result)
     } // End of function power
 } // End of class Calculator
