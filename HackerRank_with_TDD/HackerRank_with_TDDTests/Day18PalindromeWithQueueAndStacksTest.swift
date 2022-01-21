@@ -31,6 +31,25 @@ class Day18PalindromeWithQueueAndStacksTest: XCTestCase {
         XCTAssertEqual(sut.queue?.first, character)
     }
     
+    func test_whenCallTheMethodpopCharacter_popAndReturnCharacterAtTheTopOfTheStack() {
+        //given
+        let inputString = "racecar"
+        let sut = Solution()
+        let expectedLastCharacter:Character = "r"
+        let expectedStack = "raceca"
+        for character in inputString {
+            sut.pushCharacter(ch: character)
+        }
+        
+        //when
+        let result = sut.popCharacter()
+        //Then
+        XCTAssertEqual(expectedLastCharacter, result)
+        XCTAssertEqual(String(sut.stack!),expectedStack)
+    }
+    
+    
+    
 }
 
 class Solution {
@@ -45,6 +64,12 @@ class Solution {
     func enqueueCharacter(ch: Character){
            queue?.append(ch)
        }
+    
+    func popCharacter() -> Character? {
+        let lastCharacter = stack?.last ?? nil
+        stack?.removeLast()
+        return lastCharacter
+    }
     
 }
 
