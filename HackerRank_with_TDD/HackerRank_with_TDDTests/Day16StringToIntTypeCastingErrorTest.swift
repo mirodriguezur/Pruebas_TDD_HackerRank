@@ -48,9 +48,8 @@ enum StringToIntTypecastingError: Error {
 }
 
 func stringToInt(inputString: String) throws -> Int  {
-    guard Int(inputString) != nil else {
+    guard let result = Int(inputString) else {
         throw StringToIntTypecastingError.BadString
     }
-    
-    return Int(inputString)!
+    return result
 }

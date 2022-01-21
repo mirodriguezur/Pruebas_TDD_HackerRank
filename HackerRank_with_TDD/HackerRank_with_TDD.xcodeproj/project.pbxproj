@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C1BB8B32791CBC500E73558 /* Day16StringToIntTypeCastingErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BB8B22791CBC500E73558 /* Day16StringToIntTypeCastingErrorTest.swift */; };
 		4C2648BC2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2648BB2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift */; };
+		4C7281872799A92D00140A98 /* Day18PalindromeWithQueueAndStacksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7281862799A92D00140A98 /* Day18PalindromeWithQueueAndStacksTest.swift */; };
 		4C7BA051275091BD00702318 /* HackerRank_with_TDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7BA047275091BD00702318 /* HackerRank_with_TDD.framework */; };
 		4C7BA056275091BD00702318 /* HackerRank_with_TDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BA055275091BD00702318 /* HackerRank_with_TDDTests.swift */; };
 		4C7BA058275091BD00702318 /* HackerRank_with_TDD.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7BA04A275091BD00702318 /* HackerRank_with_TDD.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		4C1BB8B22791CBC500E73558 /* Day16StringToIntTypeCastingErrorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day16StringToIntTypeCastingErrorTest.swift; sourceTree = "<group>"; };
 		4C2648BB2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12InheritanceTestWithThrowingErrors.swift; sourceTree = "<group>"; };
+		4C7281862799A92D00140A98 /* Day18PalindromeWithQueueAndStacksTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day18PalindromeWithQueueAndStacksTest.swift; sourceTree = "<group>"; };
 		4C7BA047275091BD00702318 /* HackerRank_with_TDD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HackerRank_with_TDD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7BA04A275091BD00702318 /* HackerRank_with_TDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HackerRank_with_TDD.h; sourceTree = "<group>"; };
 		4C7BA04B275091BD00702318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				4CDE99592791118600568FE0 /* Day15LinkedListTest.swift */,
 				4C1BB8B22791CBC500E73558 /* Day16StringToIntTypeCastingErrorTest.swift */,
 				4CBD7C052795F6F2001B5FAB /* Day17_PowerTest.swift */,
+				4C7281862799A92D00140A98 /* Day18PalindromeWithQueueAndStacksTest.swift */,
 			);
 			path = HackerRank_with_TDDTests;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				4C7BA056275091BD00702318 /* HackerRank_with_TDDTests.swift in Sources */,
 				4C2648BC2784A99100253773 /* Day12InheritanceTestWithThrowingErrors.swift in Sources */,
+				4C7281872799A92D00140A98 /* Day18PalindromeWithQueueAndStacksTest.swift in Sources */,
 				4CBD7C062795F6F2001B5FAB /* Day17_PowerTest.swift in Sources */,
 				4C96FECF2788A623001FED2E /* Day14Difference.swift in Sources */,
 				4CDE995A2791118600568FE0 /* Day15LinkedListTest.swift in Sources */,

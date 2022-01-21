@@ -40,7 +40,7 @@ class Day17_PowerTest: XCTestCase {
         }
     }
     
-    func test_whenUserProvidesPositivesIntegers_returnPowerResult () throws {
+    func test_   () throws {
             //given
             let base = 3
             let exponent = 5
