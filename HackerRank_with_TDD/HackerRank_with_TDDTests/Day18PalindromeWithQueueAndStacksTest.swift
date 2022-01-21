@@ -20,18 +20,31 @@ class Day18PalindromeWithQueueAndStacksTest: XCTestCase {
         XCTAssertTrue((sut.stack?.isEmpty) != nil)
         XCTAssertEqual(sut.stack?.first, character)
     }
-
-
+    
+    func test_whenUserPovidesACharacter_enqueueCharacterOntoQueue() {
+        // given
+        let character:Character = "a"
+        // when
+        let sut = Solution ()
+        sut.enqueueCharacter(ch: character)
+        XCTAssertTrue((sut.queue?.isEmpty) != nil)
+        XCTAssertEqual(sut.queue?.first, character)
+    }
+    
 }
 
 class Solution {
     
     var stack: [Character]? = []
+    var queue: [Character]? = []
     
     func pushCharacter(ch: Character){
         stack?.append(ch)
     }
     
+    func enqueueCharacter(ch: Character){
+           queue?.append(ch)
+       }
     
 }
 
