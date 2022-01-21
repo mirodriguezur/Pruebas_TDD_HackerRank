@@ -48,7 +48,16 @@ class Day18PalindromeWithQueueAndStacksTest: XCTestCase {
         XCTAssertEqual(String(sut.stack!),expectedStack)
     }
     
+    func test_whenCallTheMethoddequeueCharacter_dequeuesAndReturnTheFirstCharacter() {
+        let character:Character = "a"
+        let sut = Solution ()
+        sut.enqueueCharacter(ch: character)
+        let expected:Character = "a"
     
+        //when
+        let result = sut.dequeueCharacter()
+        XCTAssertEqual(expected, result)
+    }
     
 }
 
@@ -69,6 +78,12 @@ class Solution {
         let lastCharacter = stack?.last ?? nil
         stack?.removeLast()
         return lastCharacter
+    }
+    
+    func dequeueCharacter() -> Character? {
+        let firstCharacter = queue?.first ?? nil
+        queue?.removeFirst()
+        return firstCharacter
     }
     
 }
